@@ -2,7 +2,7 @@ const RATIO = 2 / 3;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-let url = urlParams.get("url") || "";
+let url = urlParams.get("url");
 if (url.startsWith("https://") || url.startsWith("http://")) {
 } else {
   url = "https://" + url;
