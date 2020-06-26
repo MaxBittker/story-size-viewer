@@ -1,16 +1,17 @@
 const RATIO = 2 / 3;
 
+const defaultURL =
+  "https://stories.tappable.dev/brusselsbeerproject?story=true";
+
 const queryString = window.location.search;
+
 const urlParams = new URLSearchParams(queryString);
-let url = urlParams.get("url");
+let url = urlParams.get("url") || defaultURL;
 if (url.startsWith("https://") || url.startsWith("http://")) {
 } else {
   url = "https://" + url;
 }
 console.log(url);
-
-const defaultURL =
-  "https://stories.tappable.dev/brusselsbeerproject?story=true";
 
 let urlInput = document.getElementById("storyurl");
 urlInput.value = url || defaultURL;
@@ -64,6 +65,11 @@ function setIframes() {
     screen.appendChild(chromeBottom);
     phone.innerHTML = "";
     phone.appendChild(screen);
+    let resizer = document.createElement("div");
+    resizer.className = "resizers";
+    resizer.innerHTML = "<div class='resizer bottom-right'></div>";
+    phone.appendChild(resizer);
+
     // phone.appendChild(iframe);
   }
 }

@@ -22,7 +22,7 @@ footer a {
   align-items: center;
   height: 90vh;
 }
-.phones .phone {
+.phone {
   background: #343744;
   border-radius: 5px;
   border: 0.6em solid #000;
@@ -30,7 +30,8 @@ footer a {
   flex: 1 1 100%;
   margin: 0 30px;
 }
-.phones .phone::after {
+
+.phone::after {
   display: block;
   content: attr(title);
   position: absolute;
@@ -40,14 +41,14 @@ footer a {
   right: 0;
   text-align: center;
 }
-.phones .screen {
+.screen {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
 }
-.phones .content {
+.content {
   -webkit-box-flex: 1;
   flex: 1 1 auto;
   background: #ffe6c7;
@@ -60,14 +61,14 @@ footer a {
   -webkit-box-pack: center;
   justify-content: center;
 }
-.phones .safe-zone {
+.safe-zone {
   /*background-color: #4caf505e;*/
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuX1Y3dXhaIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iOS41IiBoZWlnaHQ9IjkuNSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PGxpbmUgeDE9IjAiIHk9IjAiIHgyPSIwIiB5Mj0iOS41IiBzdHJva2U9IiMwNUZGODIiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+IDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybl9WN3V4WikiIG9wYWNpdHk9IjEiLz48L3N2Zz4=");
   /*border: 2px dashed #4CAF50;*/
   box-sizing: border-box;
   position: relative;
 }
-.phones .safe-zone .text-box {
+.safe-zone .text-box {
   position: absolute;
   background: #fff;
   color: #333;
@@ -75,7 +76,7 @@ footer a {
   padding: 1em 0.5em;
   bottom: 0;
 }
-.phones .chrome {
+.chrome {
   background: #292929;
   -webkit-box-flex: 0;
   flex: 0 0 auto;
@@ -144,4 +145,46 @@ iframe {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
+}
+
+.resizeable_phone {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 4;
+}
+.resizable {
+  background: white;
+  width: 500px;
+  height: 700px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: -5;
+}
+
+.resizable .resizers {
+  width: 100%;
+  height: 100%;
+  /* border: 3px solid #4286f4; */
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  z-index: -5;
+}
+
+.resizable .resizers .resizer {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /*magic to turn square into circle*/
+  background: white;
+  border: 3px solid #4286f4;
+  position: absolute;
+  z-index: 5;
+}
+
+.resizable .resizers .resizer.bottom-right {
+  right: -15px;
+  bottom: -15px;
+  cursor: nwse-resize;
 }
