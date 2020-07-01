@@ -188,3 +188,15 @@ iframe {
   bottom: -15px;
   cursor: nwse-resize;
 }
+
+input {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 5px;
+  color: white;
+  background-color: #000;
+  padding: 5px;
+  width: 500px;
+  border-radius: 3px;
+}
